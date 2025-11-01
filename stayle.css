@@ -425,3 +425,45 @@ footer {
     margin-bottom: 30px;
   }
 }
+
+/* ===== Added responsive nav + hamburger behavior (kept styling unchanged) ===== */
+
+/* hamburger button hidden by default - shown only on mobile via media query above */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #2563eb;
+}
+
+/* mobile adjustments and nav toggle */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 12px 0;
+  }
+}
